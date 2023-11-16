@@ -12,11 +12,20 @@
 
 <body>
     <header>
-        <h2 class="text-6xl">Hunting Phone</h2>
+        <h2 class="text-6xl text-center font-bold py-8">Hunting Phone</h2>
     </header>
-    <main>
+    <main class="container mx-auto mt-8">
+
+        <!-- search section -->
+        <section class="bg-gray-300 p-4 m-4 rounded-md">
+            <input id="search-field" type="text" placeholder="Search here..." class="input input-bordered w-full max-w-xs" />
+            <button id="" onclick="hendleSearch()" class="btn btn-active btn-accent">Search</button>
+        </section>
+
+
+        <!-- phone container section -->
         <section>
-            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-black p-8 rounded-xl">
                 
             </div>
         </section>
