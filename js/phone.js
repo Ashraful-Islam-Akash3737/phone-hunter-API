@@ -1,4 +1,4 @@
-const loadPhone = async (searchText,isShowAll) => {
+const loadPhone = async (searchText = "13",isShowAll) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
     const data = await res.json();
     const phones = data.data;
@@ -79,7 +79,7 @@ const showPhoneDetails = (phone) => {
     <p class="text-md font-semibold"><span class="text-xl font-bold">Slug:</span> ${phone?.slug}</p>
     <p class="text-md font-semibold"><span class="text-xl font-bold">Release Data:</span> ${phone?.releaseDate}</p>
     <p class="text-md font-semibold"><span class="text-xl font-bold">Brand:</span> ${phone?.brand}</p>
-    <p class="text-md font-semibold"><span class="text-xl font-bold">GPS:</span> ${phone?.others?.GPS}</p>
+    <p class="text-md font-semibold"><span class="text-xl font-bold">GPS:</span> ${phone?.others?.GPS || 'NO GPS'}</p>
     
     `
 
@@ -111,4 +111,4 @@ const toggleLoadingSpinner = (isloading) => {
 const handleShowAll = () => {
     hendleSearch(true);
 }
-// loadPhone();
+loadPhone();
